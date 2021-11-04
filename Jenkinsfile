@@ -31,8 +31,7 @@ pipeline {
             
         stage("get_commit_details") {
             steps {
-                def m = checkout scm; echo m.GIT_BRANCH
-                script {
+                 script {
                     env.GIT_COMMIT_MSG = sh (script: 'cd slack-groovy && git log -1 --pretty=%B ${GIT_COMMIT}', returnStdout: true).trim()
                     env.GIT_AUTHOR = sh (script: 'cd slack-groovy && git log -1 --pretty=%cn ${GIT_COMMIT}', returnStdout: true).trim()
                     env.branchName = sh(returnStdout: true, script: 'cd slack-groovy && git rev-parse --abbrev-ref HEAD').trim()
@@ -59,5 +58,6 @@ Last commit message: '${env.GIT_COMMIT_MSG}'""")
                  }
             }
         }
+        def m = checkout scm; echo m.GIT_BRANCH
     }
 }
