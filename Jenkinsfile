@@ -4,7 +4,9 @@ pipeline {
     triggers {
         cron('H */4 * * 1-5')
     }
-        
+    
+    def m = checkout scm; echo m.GIT_BRANCH
+    
     options {
         skipDefaultCheckout true // Allows us to clean house before actual git pull
     }
@@ -59,5 +61,4 @@ Last commit message: '${env.GIT_COMMIT_MSG}'""")
             }
         }
       }
-    def m = checkout scm; echo m.GIT_BRANCH
-}
+    }
