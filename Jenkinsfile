@@ -58,6 +58,6 @@ Last commit message: '${env.GIT_COMMIT_MSG}'""")
                  }
             }
         }
-        def m = checkout scm; echo m.GIT_BRANCH
-    }
+      }
+    def m = checkout scm; echo m.GIT_BRANCH
 }
