@@ -26,7 +26,7 @@ pipeline {
         }
         stage ("Find and Copy config file") {
             steps {
-                sh 'git clone git@github.com:ziyanakthar/slack-notifier.git && cd slack-notifier && git checkout -b feature/UFI-3434 && touch injec-v31-commit && git config --global user.email "ci-admin@jenkins.com" && git config user.name "CI Admin" && git add . && git commit -m "Update the commit v31 scripts" && git push --set-upstream origin feature/UFI-3434 --force'
+                //sh 'git clone git@github.com:ziyanakthar/slack-notifier.git && cd slack-notifier && git checkout -b feature/UFI-3434 && touch injec-v31-commit && git config --global user.email "ci-admin@jenkins.com" && git config user.name "CI Admin" && git add . && git commit -m "Update the commit v31 scripts" && git push --set-upstream origin feature/UFI-3434 --force'
                 
             }
         }    
